@@ -1,0 +1,19 @@
+name: CI-Precheck
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  precheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run Tests
+        run: |
+          npm install
+          npm test
