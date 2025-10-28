@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/chanaka-kodagoda/myapp.git'
+                git branch: 'main', url: 'https://github.com/chanaka-kodagoda/myapp.git'
             }
         }
 
