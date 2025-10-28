@@ -12,6 +12,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/chanaka-kodagoda/myapp.git'
             }
         }
+    stage('Test Docker Access') {
+        steps {
+            sh 'docker version'
+            sh 'docker ps'
+       }
+   }
 
         stage('Build Docker Image') {
             steps {
